@@ -27,7 +27,7 @@ function getBSC() {
         var desc = data.records[i].fields["Desc"];
         var aD = data.records[i].fields["AcceptedDevices"]
         var methods = data.records[i].fields["methods"];
-        var  = data.records[i].fields["Information"];
+        var appt = data.records[i].fields["Appointment?"];
         
 
         newHtml += `
@@ -40,6 +40,8 @@ function getBSC() {
 
             <div class="card-body">
               <p class="card-text card-key">${name}</p>
+              <p class="card-text card-key">${info}</p>
+              <p class="card-text card-key">${desc}</p>
             </div>
           </div>
         </div>
