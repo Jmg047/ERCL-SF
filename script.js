@@ -4,7 +4,7 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/Table%201"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-//var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Link&fields%5B%5D=Pictures";
+var SUMMARY_QUERY = "fields%5B%5D=Name%5B%5D=Photo%5B%5D=Information%5B%5D=Number%5B%5D=website%5B%5D=Desc%5B%5D=AcceptedDevices%5B%5D=methods%5B%5D=Appointment?";
 
 function getBSC() {
   var eWRC_Element = document.getElementById("name");
@@ -20,8 +20,15 @@ function getBSC() {
 
       for (var i = 0; i < data.records.length; i++) {
         var name = data.records[i].fields["Name"];
-        var link = data.records[i].fields["Link"];
-        var picture = data.records[i].fields["Pictures"];
+        var picture = data.records[i].fields["Photo"];
+        var info = data.records[i].fields["Information"];
+        var num = data.records[i].fields["Number"];
+        var link = data.records[i].fields["website"];
+        var desc = data.records[i].fields["Desc"];
+        var aD = data.records[i].fields["AcceptedDevices"]
+        var methods = data.records[i].fields["methods"];
+        var  = data.records[i].fields["Information"];
+        
 
         newHtml += `
         
