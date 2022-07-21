@@ -22,21 +22,21 @@ function getBSC() {
         var name = data.records[i].fields["Name"];
         var picture = data.records[i].fields["Photo"];
         var info = data.records[i].fields["Information"];
-        var num = data.records[i].fields["Number"];
+      /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["website"];
         var desc = data.records[i].fields["Desc"];
         var aD = data.records[i].fields["AcceptedDevices"]
         var methods = data.records[i].fields["methods"];
         var appt = data.records[i].fields["Appointment?"];
-        
+        */
 
         newHtml += `
         
           <div class="col-md-4 cardImageText">
           <div class="card">
-            <a href="${link}" target="_blank"
+            
               >${picture ? `<img class="head" src="${picture[0].url}">` : ``}
-            </a>
+            
 
             <div class="card-body">
               <p class="card-text card-key">${name}</p>
