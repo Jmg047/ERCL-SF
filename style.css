@@ -16,3 +16,12 @@ body {
   margin-right: auto;
   width: 50%;
 }
+.card-body {
+  margin: 70px;
+  font-size: 30px;
+  text-align: center;
+  
+}
+.head {
+  size: 50px;
+}
