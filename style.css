@@ -22,6 +22,14 @@ body {
   text-align: center;
   
 }
-.head {
-  size: 50px;
+.card {
+  justify-content: center;
+  padding: .5rem;
+  background-color: #FFFFFF;
+}
+.head {top: 50%
+  
+  padding: .7rem;
+  background-color: #177245;
+  width: 60%;
 }

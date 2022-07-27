@@ -35,7 +35,7 @@ function getBSC() {
           <div class="col-md-4 cardImageText">
           <div class="card" >
             
-              >${photo ? `<img class="head" id="header" src="${photo[0].url}">` : ``}
+              >${photo ? `<img class="head" src="${photo[0].url}">` : ``}
             
 
             <div class="card-body">
