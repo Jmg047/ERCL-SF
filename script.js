@@ -21,7 +21,7 @@ function getBSC() {
       for (var i = 0; i < data.records.length; i++) {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
-        var info = data.records[i].fields["Information"];
+        var info = data.records[i].fields["Address"];
       /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["Website"];
         var desc = data.records[i].fields["Desc"];
@@ -48,10 +48,55 @@ function getBSC() {
         
         `;
       }
+    
+    
 
        eWRC_Element.innerHTML = newHtml;
     });
 }
+
+// edit below
+function fetchSingleRC() {
+  var eWRC_Element = document.getElementById("RC center");
+
+  fetch(`${AT_URL}/${dogId}?${SUMMARY_QUERY}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // response is a single object
+
+      var dogPic = data.fields["Picture URL"];
+      var dogName = data.fields["Name"];
+      var dogDescription = data.fields["Description"];
+ 
+      var colorsHtml = "";
+      if ("Colors" in data.fields) {
+        colorsHtml += "<ul>";
+        var dogColors = data.fields["Colors"].split(", ");
+        for (var i = 0; i < dogColors.length; i++) {
+          colorsHtml += `<li>${dogColors[i]}</li>`;
+        }
+        colorsHtml += "</ul>";
+      }
+
+      var newHtml = `
+        <div class="col-9">
+          <div class="card">
+            <h4 class="card-title">${dogName}</h4>
+            <h5>Colors</h5>
+            ${colorsHtml}
+            <h5>Description</h5>
+            <p>${dogDescription}</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="${dogPic}" alt="picture of a ${dogName} doggie">
+        </div>
+      `;
+
+      dogResultElement.innerHTML = newHtml;
+    });
+}
+//edit above
 
 var idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
