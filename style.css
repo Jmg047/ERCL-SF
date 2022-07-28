@@ -19,6 +19,7 @@ body {
 .card-body {
   margin: 70px;
   font-size: 30px;
+  font-family: Monospace, "Arial";
   text-align: center;
   
 }
@@ -27,9 +28,15 @@ body {
   padding: .5rem;
   background-color: #FFFFFF;
 }
-.head {top: 50%
+.head {
+  top: 50%;
+  margin-top: 50px;
   
-  padding: .7rem;
+  left:50%;
+  margin-left: 100px;
+  
+  
+  padding: 20px;
   background-color: #177245;
   width: 60%;
 }
