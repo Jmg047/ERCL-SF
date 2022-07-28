@@ -4,7 +4,7 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointments?";
+var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointments";
 
 function getBSC() {
   var eWRC_Element = document.getElementById("RC center");
@@ -76,7 +76,7 @@ function fetchSingleRC(rcId) {
       var desc = data.fields["Desc"];
       var aD = data.fields["AcceptedDevices"]
       var methods = data.fields["methods"];
-      var appt = data.fields["Appointment?"];
+      var appt = data.fields["Appointment"];
  
       /*var colorsHtml = "";
       if ("AcceptedDevices" in data.fields) {
@@ -92,21 +92,34 @@ function fetchSingleRC(rcId) {
       var newHtml = `
         <div class="col-9">
           <div class="card">
+            
             <h4 class="card-title">${name}</h4> 
+            
             <h5>Description</h5>
             <p>${desc}</p>
+            
             <h5>Information</h5>
             <p>${info}</p>
+            
             <h5>Phone</h5>
             <p>${num}</p>
+            
             <h5>Website</h5>
             <p>${link}</p>
-            <h5>Description</h5>
-            <p>${desc}</p>
+            
+            <h5>Accepted devices</h5>
+            <p>${aD}</p>
+            
+            <h5>Methods</h5>
+            <p>${methods}</p>
+            
+            <h5>Appointment?</h5>
+            <p>${appt}</p>
             
             
           </div>
         </div>
+        
         <div class="col">
           <img src="${photo}" alt="picture of a ${name} recycling center">
         </div>
@@ -120,7 +133,7 @@ function fetchSingleRC(rcId) {
 var idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
   // has at least ["id?", "OUR ID"]
-  getSingleDirectory(idParams[1]); // create detail view HTML w/ our id
+  fetchSingleRC(idParams[1]); // create detail view HTML w/ our id
 } else {
   getBSC(); // no id given, fetch summaries
 }
