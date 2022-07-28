@@ -4,10 +4,10 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointments";
+var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
 
 function getBSC() {
-  var eWRC_Element = document.getElementById("RC center");
+  var eWRC_Element = document.getElementById("RC-center");
 
   fetch(`${AT_url}?${AT_key}&${SUMMARY_QUERY}`)
     .then((response) => response.json())
@@ -61,7 +61,7 @@ function getBSC() {
 
 // edit below
 function fetchSingleRC(rcId) {
-  var eWRC_Element = document.getElementById("RC center");
+  var eWRC_Element = document.getElementById("RC-center");
 
   fetch(`${AT_url}/${rcId}?${SUMMARY_QUERY}`)
     .then(response => response.json())
@@ -127,7 +127,7 @@ function fetchSingleRC(rcId) {
 
       eWRC_Element.innerHTML = newHtml;
     });
-}
+} 
 //edit above
 
 var idParams = window.location.search.split("?id=");
