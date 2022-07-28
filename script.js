@@ -4,7 +4,7 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Information";
+var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointments?";
 
 function getBSC() {
   var eWRC_Element = document.getElementById("RC center");
@@ -21,7 +21,7 @@ function getBSC() {
       for (var i = 0; i < data.records.length; i++) {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
-        var address = data.records[i].fields["information"];
+        var address = data.records[i].fields["Address"];
         
       /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["Website"];
@@ -71,6 +71,12 @@ function fetchSingleRC(rcId) {
       var photo = data.fields["Photo"];
       var name = data.fields["Name"];
       var info = data.fields["Information"];
+      var num = data.fields["Number"];
+      var link = data.fields["Website"];
+      var desc = data.fields["Desc"];
+      var aD = data.fields["AcceptedDevices"]
+      var methods = data.fields["methods"];
+      var appt = data.fields["Appointment?"];
  
       /*var colorsHtml = "";
       if ("AcceptedDevices" in data.fields) {
@@ -86,11 +92,19 @@ function fetchSingleRC(rcId) {
       var newHtml = `
         <div class="col-9">
           <div class="card">
-            <h4 class="card-title">${name}</h4>
-            <h5>Colors</h5>
-            ${aD}
+            <h4 class="card-title">${name}</h4> 
             <h5>Description</h5>
+            <p>${desc}</p>
+            <h5>Information</h5>
             <p>${info}</p>
+            <h5>Phone</h5>
+            <p>${num}</p>
+            <h5>Website</h5>
+            <p>${link}</p>
+            <h5>Description</h5>
+            <p>${desc}</p>
+            
+            
           </div>
         </div>
         <div class="col">
