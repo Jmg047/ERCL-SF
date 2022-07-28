@@ -40,7 +40,8 @@ body {
   width: 60%;
 }
 .btn-primary{
-  background-color: #177245;
+  background-color: #39e75f;
+  font-family: Monospace, "Arial";
   padding: 20px;
   border-radius: 10px;
   

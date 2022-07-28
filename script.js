@@ -21,7 +21,8 @@ function getBSC() {
       for (var i = 0; i < data.records.length; i++) {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
-        var address = data.records[i].fields["Address"];
+        var address = data.records[i].fields["information"];
+        
       /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["Website"];
         var desc = data.records[i].fields["Desc"];
@@ -41,9 +42,10 @@ function getBSC() {
             <div class="card-body">
               <p class="card-text card-key">${name}</p>
               <p class="card-text card-key">${address}</p>
+              
              <a class="btn btn-primary" 
                 href="index.html?id=${data.records[i].id}"
-                target="_blank">More Details</a>
+                target="_blank">More Info</a>
             </div>
           </div>
         </div>
