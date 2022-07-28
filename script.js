@@ -63,7 +63,7 @@ function getBSC() {
 function fetchSingleRC(rcId) {
   var eWRC_Element = document.getElementById("RC-center");
 
-  fetch(`${AT_url}/${rcId}?${SUMMARY_QUERY}`)
+  fetch(`${AT_url}/${rcId}?${AT_key}`)
     .then(response => response.json())
     .then(data => {
       console.log(data); // response is a single object

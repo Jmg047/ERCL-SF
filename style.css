@@ -27,6 +27,7 @@ body {
   justify-content: center;
   padding: .5rem;
   background-color: #FFFFFF;
+  margin-bottom: 10px;
 }
 .head {
   top: 50%;
