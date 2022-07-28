@@ -68,7 +68,7 @@ function fetchSingleRC(rcId) {
     .then(data => {
       console.log(data); // response is a single object
 
-      var photo = data.fields["Photo"];
+      var photo1 = data.fields["Photo"];
       var name = data.fields["Name"];
       var info = data.fields["Information"];
       var num = data.fields["Number"];
@@ -121,7 +121,7 @@ function fetchSingleRC(rcId) {
         </div>
         
         <div class="col">
-          <img src="${photo}" alt="picture of a ${name} recycling center">
+          <img src="${photo1}" alt="picture of a ${name} recycling center">
         </div>
       `;
 
