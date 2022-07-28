@@ -21,7 +21,7 @@ function getBSC() {
       for (var i = 0; i < data.records.length; i++) {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
-        var info = data.records[i].fields["Address"];
+        var address = data.records[i].fields["Address"];
       /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["Website"];
         var desc = data.records[i].fields["Desc"];
@@ -35,13 +35,15 @@ function getBSC() {
           <div class="col-md-4 cardImageText">
           <div class="card" >
             
-              >${photo ? `<img class="head" src="${photo[0].url}">` : ``}
+              ${photo ? `<img class="head" src="${photo[0].url}">` : ``}
             
 
             <div class="card-body">
               <p class="card-text card-key">${name}</p>
-              <p class="card-text card-key">${info}</p>
-             
+              <p class="card-text card-key">${address}</p>
+             <a class="btn btn-primary" 
+                href="index.html?id=${data.records[i].id}"
+                target="_blank">More Details</a>
             </div>
           </div>
         </div>
@@ -56,24 +58,24 @@ function getBSC() {
 }
 
 // edit below
-function fetchSingleRC() {
+function fetchSingleRC(rcId) {
   var eWRC_Element = document.getElementById("RC center");
 
-  fetch(`${AT_URL}/${dogId}?${SUMMARY_QUERY}`)
+  fetch(`${AT_url}/${rcId}?${SUMMARY_QUERY}`)
     .then(response => response.json())
     .then(data => {
       console.log(data); // response is a single object
 
-      var dogPic = data.fields["Picture URL"];
-      var dogName = data.fields["Name"];
-      var dogDescription = data.fields["Description"];
+      var photo = data.fields["Photo"];
+      var name = data.fields["Name"];
+      var info = data.fields["Information"];
  
       var colorsHtml = "";
-      if ("Colors" in data.fields) {
+      if ("AcceptedDevices" in data.fields) {
         colorsHtml += "<ul>";
-        var dogColors = data.fields["Colors"].split(", ");
-        for (var i = 0; i < dogColors.length; i++) {
-          colorsHtml += `<li>${dogColors[i]}</li>`;
+        var aD = data.fields["AcceptedDevices"].split(", ");
+        for (var i = 0; i < aD.length; i++) {
+          colorsHtml += `<li>${aD[i]}</li>`;
         }
         colorsHtml += "</ul>";
       }
@@ -81,19 +83,19 @@ function fetchSingleRC() {
       var newHtml = `
         <div class="col-9">
           <div class="card">
-            <h4 class="card-title">${dogName}</h4>
+            <h4 class="card-title">${name}</h4>
             <h5>Colors</h5>
-            ${colorsHtml}
+            ${aD}
             <h5>Description</h5>
-            <p>${dogDescription}</p>
+            <p>${info}</p>
           </div>
         </div>
         <div class="col">
-          <img src="${dogPic}" alt="picture of a ${dogName} doggie">
+          <img src="${photo}" alt="picture of a ${name} recycling center">
         </div>
       `;
 
-      dogResultElement.innerHTML = newHtml;
+      eWRC_Element.innerHTML = newHtml;
     });
 }
 //edit above
