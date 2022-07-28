@@ -70,7 +70,7 @@ function fetchSingleRC(rcId) {
       var name = data.fields["Name"];
       var info = data.fields["Information"];
  
-      var colorsHtml = "";
+      /*var colorsHtml = "";
       if ("AcceptedDevices" in data.fields) {
         colorsHtml += "<ul>";
         var aD = data.fields["AcceptedDevices"].split(", ");
@@ -79,6 +79,7 @@ function fetchSingleRC(rcId) {
         }
         colorsHtml += "</ul>";
       }
+      */
 
       var newHtml = `
         <div class="col-9">
