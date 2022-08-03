@@ -105,7 +105,7 @@ function fetchSingleRC(rcId) {
             <p>${num}</p>
             
             <h5>Website</h5>
-            <p>${link}</p>
+            <a href="#" class="card-link">${link}</p>
             
             <h5>Accepted devices</h5>
             <p>${aD}</p>

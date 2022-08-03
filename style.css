@@ -23,6 +23,7 @@ body {
   text-align: center;
   
 }
+
 .card {
   justify-content: center;
   padding: .5rem;
@@ -34,7 +35,7 @@ body {
   margin-top: 50px;
   
   left:50%;
-  margin-left: 45px;
+  margin-left: 25px;
   
   padding: 20px;
   background-color: #177245;
@@ -45,5 +46,4 @@ body {
   font-family: Monospace, "Arial";
   padding: 20px;
   border-radius: 10px;
-  
 }
