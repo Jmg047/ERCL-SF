@@ -30,16 +30,16 @@ body {
   background-color: #FFFFFF;
   margin-bottom: 10px;
 }
-.head {
+.card-img-top { 
   top: 50%;
-  margin-top: 50px;
+  margin-top: -8px;
+
+  left:20%;
+  margin-left: -8.5px;
   
-  left:50%;
-  margin-left: 25px;
-  
-  padding: 20px;
+  padding: 8px;
   background-color: #177245;
-  width: 80%;
+  width:100%;
 }
 .btn-primary{
   background-color: #39e75f;

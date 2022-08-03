@@ -32,11 +32,11 @@ function getBSC() {
         */
 
         newHtml += `
-        
+        <div class="row">
           <div class="col-md-4 cardImageText">
           <div class="card" >
             
-              ${photo ? `<img class="head" src="${photo[0].url}">` : ``}
+              ${photo ? `<img class="card-img-top" src="${photo[0].url}">` : ``}
             
 
             <div class="card-body">
@@ -49,7 +49,7 @@ function getBSC() {
             </div>
           </div>
         </div>
-        
+        </div>
         `;
       }
     
@@ -105,7 +105,7 @@ function fetchSingleRC(rcId) {
             <p>${num}</p>
             
             <h5>Website</h5>
-            <a href="#" class="card-link">${link}</p>
+            <a href="#" class="card-link">${link}</a>
             
             <h5>Accepted devices</h5>
             <p>${aD}</p>
