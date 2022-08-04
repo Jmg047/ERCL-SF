@@ -8,8 +8,9 @@ h1 {
 }
 .sub{
   font-family: Monospace;
-  right:20%;
-  margin-right: 100px;
+  left:20%;
+  margin-left: 100px;
+  font-size: 30px;
 }
 body {
   
