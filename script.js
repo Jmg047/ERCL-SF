@@ -4,7 +4,7 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
+var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=DVPhoto&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
 
 var navBar=`
   <nav class="navbar navbar-light bg-light">
@@ -77,7 +77,7 @@ function fetchSingleRC(rcId) {
     .then(data => {
       console.log(data); // response is a single object
 
-      var photo1 = data.fields["Photo"];
+      var photo1 = data.fields["DVPhoto"];
       var name = data.fields["Name"];
       var info = data.fields["Information"];
       var num = data.fields["Number"];
@@ -102,7 +102,7 @@ function fetchSingleRC(rcId) {
         <div class="col-9">
           <div class="card">
             
-            <h4 class="card-title" style="font-family: Monospace" >${name}</h4> 
+            <h4 class="card-title" style="font-family: Monospace, text-align: center;" >${name}</h4> 
             
             <h5 style="font-family: Monospace">Description</h5>
             <p style="font-family: Monospace">${desc}</p>
@@ -131,7 +131,7 @@ function fetchSingleRC(rcId) {
         </div>
         
         <div class="col">
-          <img src="${photo1}" alt="picture of a ${name} recycling center">
+          <img src="${photo1[0].url}" style="width: 100%" alt="picture of a ${name} recycling center">
         </div>
       `;
 
