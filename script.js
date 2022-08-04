@@ -6,6 +6,14 @@ var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
 var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
 
+var navBar=`
+  <nav class="navbar navbar-light bg-light">
+  <span class="navbar-text">
+    Navbar text with an inline element
+  </span>
+</nav>
+`;
+
 function getBSC() {
   var eWRC_Element = document.getElementById("RC-center");
 
@@ -32,7 +40,7 @@ function getBSC() {
         */
 
         newHtml += `
-        <div class="row">
+        
           <div class="col-md-4 cardImageText">
           <div class="card" >
             
@@ -49,7 +57,7 @@ function getBSC() {
             </div>
           </div>
         </div>
-        </div>
+        
         `;
       }
     
