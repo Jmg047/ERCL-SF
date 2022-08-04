@@ -114,7 +114,7 @@ function fetchSingleRC(rcId) {
             <p style="font-family: Monospace">${num}</p>
             
             <h5 style="font-family: Monospace">Website</h5>
-            <a href="#" class="card-link" style="font-family: Monospace">${link}</a>
+            <a href="data.fields["Website"]" class="card-link" style="font-family: Monospace">${link}</a>
             
             <h5 style="font-family: Monospace">Accepted devices</h5>
             <list>
