@@ -102,7 +102,7 @@ function fetchSingleRC(rcId) {
         <div class="col-9">
           <div class="card">
             
-            <h4 class="card-title" style="font-family: Monospace, text-align: center;" >${name}</h4> 
+            <h4 class="card-title" style="font-family: Monospace; text-align: center;" >${name}</h4> 
             
             <h5 style="font-family: Monospace">Description</h5>
             <p style="font-family: Monospace">${desc}</p>
