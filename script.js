@@ -111,7 +111,7 @@ function fetchSingleRC(rcId) {
             <p style="font-family: Monospace">${info}</p>
             
             <h5 style="font-family: Monospace">Phone</h5>
-            <a href="https://www.google.com/search?q=SF+enviornment+organization&client=safari&rls=en&sxsrf=ALiCzsaHES25D-dZsc670M1AA0j3wYloBA%3A1659573466451&ei=2hTrYpyhG_bYkPIPwOmE0AI&ved=0ahUKEwic9sj3-Kv5AhV2LEQIHcA0ASoQ4dUDCA0&uact=5&oq=SF+enviornment+organization&gs_lcp=Cgdnd3Mtd2l6EAMyCQgAEB4QyQMQFjIFCAAQhgMyBQgAEIYDOgcIIxCwAxAnOgcIABBHELADOgcIABCwAxBDOgoIABDkAhCwAxgBOhIILhDHARDRAxDIAxCwAxBDGAI6EgguEMcBEK8BEMgDELADEEMYAjoECCMQJzoNCC4QsQMQxwEQ0QMQQzoRCC4QgAQQsQMQgwEQxwEQrwE6EwguEIAEEIcCELEDEMcBEK8BEBQ6CAgAEIAEELEDOgsILhCABBDHARCvAToHCCMQ6gIQJzoKCC4QxwEQrwEQQzoOCC4QgAQQsQMQxwEQ0QM6CwguEIAEEMcBENEDOgsIABCABBCxAxCDAToECAAQQzoLCC4QxwEQrwEQkQI6CAgAEIAEEMkDOgUIABCABDoNCAAQgAQQhwIQyQMQFDoGCAAQHhAWOgIIJjoHCCMQsAIQJzoECAAQDToKCC4QxwEQrwEQDToHCAAQyQMQDToICAAQHhAIEA06CwgAEB4QyQMQCBANOgYIABAeEA06BwghEKABEApKBAhBGABKBAhGGAFQxA1Y601gz1FoA3ABeAGAAawBiAHWIpIBBDAuMzSYAQCgAQGwAQrIARPAAQHaAQYIARABGAnaAQYIAhABGAg&sclient=gws-wiz#" style="font-family: Monospace">${num}</p>
+            <p style="font-family: Monospace">${num}</p>
             
             <h5 style="font-family: Monospace">Website</h5>
             <a href="#" class="card-link" style="font-family: Monospace">${link}</a>
