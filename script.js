@@ -117,8 +117,9 @@ function fetchSingleRC(rcId) {
             <a href="#" class="card-link" style="font-family: Monospace">${link}</a>
             
             <h5 style="font-family: Monospace">Accepted devices</h5>
-            <p style="font-family: Monospace">${aD}</p>
-            
+            <list>
+            <ul style="font-family: Monospace">${aD}</ul>
+            </list>
             <h5 style="font-family: Monospace">Methods</h5>
             <p style="font-family: Monospace">${methods}</p>
             
