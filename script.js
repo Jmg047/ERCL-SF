@@ -14,6 +14,7 @@ var navBar=`
 </nav>
 `;
 
+
 function getBSC() {
   var eWRC_Element = document.getElementById("RC-center");
 
@@ -101,28 +102,28 @@ function fetchSingleRC(rcId) {
         <div class="col-9">
           <div class="card">
             
-            <h4 class="card-title">${name}</h4> 
+            <h4 class="card-title" style="font-family: Monospace" >${name}</h4> 
             
-            <h5>Description</h5>
-            <p>${desc}</p>
+            <h5 style="font-family: Monospace">Description</h5>
+            <p style="font-family: Monospace">${desc}</p>
             
-            <h5>Information</h5>
-            <p>${info}</p>
+            <h5 style="font-family: Monospace">Information</h5>
+            <p style="font-family: Monospace">${info}</p>
             
-            <h5>Phone</h5>
-            <p>${num}</p>
+            <h5 style="font-family: Monospace">Phone</h5>
+            <p style="font-family: Monospace">${num}</p>
             
-            <h5>Website</h5>
-            <a href="#" class="card-link">${link}</a>
+            <h5 style="font-family: Monospace">Website</h5>
+            <a href="#" class="card-link" style="font-family: Monospace">${link}</a>
             
-            <h5>Accepted devices</h5>
-            <p>${aD}</p>
+            <h5 style="font-family: Monospace">Accepted devices</h5>
+            <p style="font-family: Monospace">${aD}</p>
             
-            <h5>Methods</h5>
-            <p>${methods}</p>
+            <h5 style="font-family: Monospace">Methods</h5>
+            <p style="font-family: Monospace">${methods}</p>
             
-            <h5>Appointment?</h5>
-            <p>${appt}</p>
+            <h5 style="font-family: Monospace">Appointment?</h5>
+            <p style="font-family: Monospace">${appt}</p>
             
             
           </div>
