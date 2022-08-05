@@ -100,7 +100,7 @@ function fetchSingleRC(rcId) {
 
       var newHtml = `
         <div class="col-9">
-          <div class="card">
+          <div class="card" style="font-size: 30px;">
             
             <h4 class="card-title" style="font-family: Monospace; text-align: center;" >${name}</h4> 
             
