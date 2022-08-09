@@ -4,7 +4,7 @@ This is your site JavaScript code - you can add interactivity and carry out proc
 */
 var AT_url = "https://api.airtable.com/v0/appSfzhC5ABBvTp2O/RC_data"
 var AT_key = "api_key=keySsUNwZfQgXnsjZ"
-var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=DVPhoto&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
+var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=DVPhoto&fields%5B%5D=googURL&fields%5B%5D=Information&fields%5B%5D=Address&fields%5B%5D=Number&fields%5B%5D=Website&fields%5B%5D=Desc&fields%5B%5D=AcceptedDevices&fields%5B%5D=methods&fields%5B%5D=Appointment";
 
 var navBar=`
   <nav class="navbar navbar-light bg-light">
@@ -87,6 +87,7 @@ function fetchSingleRC(rcId) {
       var aD = data.fields["AcceptedDevices"]
       var methods = data.fields["methods"];
       var appt = data.fields["Appointment"];
+      var 
  
       /*var colorsHtml = "";
       if ("AcceptedDevices" in data.fields) {
