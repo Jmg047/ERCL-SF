@@ -87,7 +87,7 @@ function fetchSingleRC(rcId) {
       var aD = data.fields["AcceptedDevices"]
       var methods = data.fields["methods"];
       var appt = data.fields["Appointment"];
-      var 
+      var gmurl = data.fields["googURL"];
  
       /*var colorsHtml = "";
       if ("AcceptedDevices" in data.fields) {
@@ -133,6 +133,7 @@ function fetchSingleRC(rcId) {
         </div>
         
         <div class="col">
+        <a href="${gmurl}" target="_blank">
           <img src="${photo1[0].url}" style="width: 100%" alt="picture of a ${name} recycling center">
         </div>
       `;
