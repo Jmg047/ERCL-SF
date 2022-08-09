@@ -31,6 +31,7 @@ function getBSC() {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
         var address = data.records[i].fields["Address"];
+        var aD = data.records[i].fields["AcceptedDevices"]
         
       /*  var num = data.records[i].fields["Number"];
         var link = data.records[i].fields["Website"];
@@ -42,7 +43,7 @@ function getBSC() {
 
         newHtml += `
         
-          <div class="col-md-4 cardImageText">
+          <div class="col-9">
           <div class="card" >
             
               ${photo ? `<img class="card-img-top" src="${photo[0].url}">` : ``}
@@ -50,7 +51,7 @@ function getBSC() {
 
             <div class="card-body">
               <p class="card-text card-key">${name}</p>
-              <p class="card-text card-key">${address}</p>
+              <p class="card-text card-key">Accepted Devices: <br>  ${aD}</p>
               
              <a class="btn btn-primary" 
                 href="index.html?id=${data.records[i].id}"
