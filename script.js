@@ -143,6 +143,22 @@ function fetchSingleRC(rcId) {
 } 
 //edit above
 
+function searchFunction() {
+  var input, filter, cardimagetext, i, x;
+  input = document.getElementById("myinput");
+  filter = input.value.toUpperCase();
+  cardimagetext = document.getElementsByClassName("cardImageText");
+
+  for (x = 0; x < cardimagetext.length; x++) {
+    i = cardimagetext[x].getElementsByClassName("card-key")[0];
+    if (i.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      cardimagetext[x].style.display = "";
+    } else {
+      cardimagetext[x].style.display = "none";
+    }
+  }
+}
+
 var idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
   // has at least ["id?", "OUR ID"]
