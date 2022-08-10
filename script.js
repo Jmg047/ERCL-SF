@@ -150,7 +150,7 @@ function searchFunction() {
   cardimagetext = document.getElementsByClassName("cardImageText");
 
   for (x = 0; x < cardimagetext.length; x++) {
-    i = cardimagetext[x].getElementsByClassName("aD")[0];
+    i = cardimagetext[x].getElementsByClassName("${aD}")[0];
     if (i.innerHTML.toUpperCase().indexOf(filter) > -1) {
       cardimagetext[x].style.display = "";
     } else {
