@@ -24,18 +24,23 @@
 
     
   </head>
+  
     <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <nav class="navbar navbar-light">
+    <form class="form-inline">
+      <input
+        id="myinput"
+        class="form-controll mr-sm-2"
+        type="text"
+        placeholder="Search By Device"
+        onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Search By Device'"
+        aria-label="Search"
+        autocomplete="off"
+        onkeyup="searchFunction()"
+      />
     </form>
-  </div>
-</nav>
+  </nav>
       <!--<div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
