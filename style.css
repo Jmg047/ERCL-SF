@@ -1,3 +1,8 @@
+.navbar{
+  width: 40px;
+  margin-top: .75em;
+}
+
 .card-img-top{
   width: 415px;
   height:  500px;
