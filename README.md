@@ -21,6 +21,9 @@ that takes E-waste in San Francisco.
 The detailed view for each card features a description provided by the 
 business, their hours, website, and directions to the center location!
 
+Database: AirTable  
+Info Src: Google
+
 
 Open each file and check out the comments (in gray) for more info.
 
