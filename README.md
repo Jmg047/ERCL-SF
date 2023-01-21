@@ -29,8 +29,8 @@ Open each file and check out the comments (in gray) for more info.
 
 ## Features to be added 🏗️
 
-> Search Bar functionality
-> Mobile Responsiveness 
+> Search Bar functionality, 
+> Mobile Responsiveness, 
 > Footer 
 
 ## This was built this with Glitch!
