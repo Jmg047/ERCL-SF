@@ -1,6 +1,6 @@
 # E-Waste Reycling Center Locator !
 
-This is my first Webapp, it was built during Summer 2022
+This is my first webapp, it was built during Summer 2022
 while being mentored in web development
 during Dev/Mission's Pre-Apprenticeship program.
 
