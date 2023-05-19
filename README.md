@@ -6,14 +6,6 @@ during Dev/Mission's Pre-Apprenticeship program.
 
 ## What's in this project?
 
-← `README.md`
-
-← `index.html`
-
-← `style.css`
-
-← `script.js`
-
 This Project features a list view of cards created using 
 Bootstrap. The cards feature a thumbnail of each recycling center
 that takes E-waste in San Francisco. 
