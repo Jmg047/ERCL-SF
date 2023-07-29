@@ -16,14 +16,6 @@ business, their hours, website, and directions to the center location!
 Database: AirTable  
 Info Src: Google
 
-
-Open each file and check out the comments (in gray) for more info.
-
-## Features to be added 🏗️
-
-> Search Bar debug, 
-> Footer 
-
 ## This was built this with Glitch!
 
 [Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
