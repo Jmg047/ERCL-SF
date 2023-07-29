@@ -1,4 +1,4 @@
-# E-Waste Reycling Center Locator !
+# E-Waste Reycling Center Locator
 
 This is my first webapp, it was built during Summer 2022
 while being mentored in web development
@@ -15,14 +15,6 @@ business, their hours, website, and directions to the center location!
 
 Database: AirTable  
 Info Src: Google
-
-
-Open each file and check out the comments (in gray) for more info.
-
-## Features to be added 🏗️
-
-> Search Bar debug, 
-> Footer 
 
 ## This was built this with Glitch!
 
