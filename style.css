@@ -49,6 +49,15 @@ form {
   margin-top: 10px;
 }
 
+.search-bar-container {
+  display: block; /* By default, show the search bar container */
+
+  /* Media query to hide the search bar container in the detailed view */
+  @media (min-width: 768px) and (max-width: 991px){
+    display: none;
+  }
+}
+
 /* Styles for the subtitle */
 .sub {
   margin-top: 5px;
@@ -120,7 +129,12 @@ body {
   padding: 20px;
   border-radius: 10px;
 }
-
+button {
+  background-color: #39e75f;
+  font-family: Monospace, "Arial";
+  padding: 20px;
+  border-radius: 10px;
+}
 /* Hover and active styles for buttons */
 button:hover {
   filter: brightness(110%);
@@ -136,7 +150,7 @@ button:active {
   flex-direction: center;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 150vh;
   border-radius: 9px;
   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
@@ -146,7 +160,13 @@ button:active {
 }
 
 /* Styles for the detailed view card image */
-.col {
+.detailed-view-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.detailed-view-content .card img {
   width: 100%;
   height: auto;
   border-radius: 9px;
@@ -156,19 +176,19 @@ button:active {
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Optional: Adjust as needed */
+  justify-content: space-between;
 }
 
 /* Styles for grid items */
 .grid-item {
-  flex: 0 0 calc(33.33% - 20px); /* Three items per row with some spacing */
-  margin-bottom: 20px; /* Optional: Add margin between items */
+  flex: 0 0 calc(33.33% - 20px); 
+  margin-bottom: 25px;
 }
 
 /* Media query for desktop and tablet */
 @media (min-width: 768px) and (max-width: 991px) {
   .grid-container {
-    justify-content: space-between; /* Three items per row with some spacing */
+    justify-content: space-between;
   }
   .container-detailed-view {
     text-align: center;
@@ -180,18 +200,18 @@ button:active {
 /* Media query for mobile */
 @media (max-width: 767px) {
   .grid-container {
-    flex-direction: column; /* Display items in a vertical layout on mobile */
-    align-items: center; /* Center items vertically on mobile */
+    flex-direction: column; 
+    align-items: center; 
   }
   .grid-item {
     flex: 0 0 100%; /* Full width for each item on mobile */
   }
   h1 {
     max-width: 90%;
-    font-size: 30px; /* Adjust the font size to your preference */
+    font-size: 30px;
   }
   .sub {
-    font-size: 15px; /* Adjust the font size to your preference */
+    font-size: 15px; 
     animation: jumbotronAnimation 5s infinite;
   }
   .navbar {
@@ -199,18 +219,16 @@ button:active {
     align-items: center;
   }
   .card {
-    /* Adjust card styles for mobile */
-    padding: 10px; /* Reduce padding */
+    
+    padding: 10px; 
   }
 
   .card-img-top {
-    /* Adjust card image size for mobile */
     width: 100%; /* Make the image full width of the card */
     height: auto; /* Maintain aspect ratio */
   }
 
   .card-body {
-    /* Adjust font size for mobile */
     font-size: 16px;
   }
   .container-detailed-view {

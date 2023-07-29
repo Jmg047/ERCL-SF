@@ -43,7 +43,6 @@ function getBSC() {
 
       eWRC_Element.innerHTML = newHtml;
 
-      // Add event listener to all "More Info" buttons after the elements are added to the DOM
       const moreInfoButtons = document.querySelectorAll(".more-info-button");
       moreInfoButtons.forEach(button => {
         button.addEventListener("click", function() {
@@ -79,6 +78,7 @@ function fetchSingleRC(rcId) {
 
       var newHtml = `
       <div class="container-detailed-view">
+       <div class="detailed-view-content">
           <div class="card" style="font-size: 20px;">
             
             <h4 class="card-title" style="font-family: Monospace; text-align: center;" >${name}</h4> 
@@ -105,15 +105,14 @@ function fetchSingleRC(rcId) {
             <h5 style="font-family: Monospace">Appointment?</h5>
             <p style="font-family: Monospace">${appt}</p>
             
+            <div class="col">
+            <a href="${gmurl}" target="_blank">
+              <img src="${photo1[0].url}" style="width: 100%" alt="picture of a ${name} recycling center">
+            </div>
             
           </div>
         </div>
-        
-        <div class="col">
-        <a href="${gmurl}" target="_blank">
-          <img src="${photo1[0].url}" style="width: 100%" alt="picture of a ${name} recycling center">
-        </div>
-
+      </div>
       `;
 
       eWRC_Element.innerHTML = newHtml;
@@ -141,6 +140,29 @@ function searchFunction() {
     }
   }
 }
+
+function showViewElements() {
+  const idParams = window.location.search.split("?id=");
+  const backButtonContainer = document.querySelector(".back-button-container");
+  const searchContainer = document.querySelector(".search-bar");
+
+  if (idParams.length >= 2) {
+    // has at least ["id?", "OUR ID"]
+    backButtonContainer.style.display = "block"; // Show back button
+    searchContainer.style.display = "none"; // Hide search bar
+  } else {
+    backButtonContainer.style.display = "none"; // Hide back button
+    searchContainer.style.display = "block"; // Show search bar
+  }
+}
+
+// Add event listener to the back button
+document.getElementById("back-button").addEventListener("click", function () {
+  window.location.href = "index.html"; 
+});
+
+// Call the function to set the initial view state
+showViewElements();
 
 var idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
