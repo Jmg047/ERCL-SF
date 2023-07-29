@@ -1,4 +1,4 @@
-# E-Waste Reycling Center Locator !
+# E-Waste Reycling Center Locator
 
 This is my first webapp, it was built during Summer 2022
 while being mentored in web development
