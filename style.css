@@ -1,64 +1,222 @@
-.navbar{
-  width: 50em;
-  margin-top: .75em;
+/* General styles for the navbar */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.card-img-top{
+/* Keyframes for jumbotron animation */
+@keyframes jumbotronAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Styles for the input element */
+input {
+  width: 100%;
+  height: 34px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+}
+
+/* Styles for the search bar form */
+form {
+  width: 400px;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+/* Styles for the subtitle */
+.sub {
+  margin-top: 5px;
+  animation: jumbotronAnimation 5s infinite;
+}
+
+/* Styles for the card image */
+.card-img-top {
   width: 415px;
-  height:  500px;
+  height: 500px;
   object-fit: cover;
 }
+
+/* Styles for the main heading */
 h1 {
   text-align: center;
   font-family: Monospace, "Arial";
-  font-size: 80px;
-   border: 1px red;
-  border-radius: 10px
+  font-size: 70px;
+  border: 1px red;
+  border-radius: 10px;
 }
-.sub{
+
+/* Styles for the subtitle */
+.sub {
   font-family: Monospace;
-  left:20%;
+  left: 20%;
   margin-left: 100px;
   font-size: 30px;
 }
+
+/* General styles for the body */
 body {
-  
   background: lightgreen;
 }
-.row {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+
+/* Styles for the card body */
 .card-body {
   margin: 70px;
-  font-size: 30px;
+  font-size: 16px;
   font-family: Monospace, "Arial";
   text-align: center;
-  
+  padding: 10px;
 }
 
-.card {
+/* Styles for the card image and container */
+#list-view-container {
+  display: flex;
   justify-content: center;
-  padding: .5rem;
-  background-color: #FFFFFF;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 9px;
   margin-bottom: 10px;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
-.card-img-top { 
+.card-img-top {
   top: 50%;
   margin-top: -8px;
-
-  left:20%;
   margin-left: -8.5px;
-  
   padding: 8px;
   background-color: #177245;
-  width:100%;
+  border-radius: 9px 9px 0px 0px;
+  width: 100%;
 }
-.btn-primary{
+
+/* Styles for the primary button */
+.btn-primary {
   background-color: #39e75f;
   font-family: Monospace, "Arial";
   padding: 20px;
   border-radius: 10px;
 }
+
+/* Hover and active styles for buttons */
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+.container-detailed-view {
+  display: flex; 
+  flex: 0 0 100%;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  border-radius: 9px;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+/* Styles for the detailed view card image */
+.col {
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+}
+
+/* Styles for the grid container */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Optional: Adjust as needed */
+}
+
+/* Styles for grid items */
+.grid-item {
+  flex: 0 0 calc(33.33% - 20px); /* Three items per row with some spacing */
+  margin-bottom: 20px; /* Optional: Add margin between items */
+}
+
+/* Media query for desktop and tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid-container {
+    justify-content: space-between; /* Three items per row with some spacing */
+  }
+  .container-detailed-view {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 767px) {
+  .grid-container {
+    flex-direction: column; /* Display items in a vertical layout on mobile */
+    align-items: center; /* Center items vertically on mobile */
+  }
+  .grid-item {
+    flex: 0 0 100%; /* Full width for each item on mobile */
+  }
+  h1 {
+    max-width: 90%;
+    font-size: 30px; /* Adjust the font size to your preference */
+  }
+  .sub {
+    font-size: 15px; /* Adjust the font size to your preference */
+    animation: jumbotronAnimation 5s infinite;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    /* Adjust card styles for mobile */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .card-img-top {
+    /* Adjust card image size for mobile */
+    width: 100%; /* Make the image full width of the card */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .card-body {
+    /* Adjust font size for mobile */
+    font-size: 16px;
+  }
+  .container-detailed-view {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+

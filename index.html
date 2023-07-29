@@ -1,70 +1,42 @@
-
 <!DOCTYPE html>
 <link rel="StyleSheet" href="style.css">
 
 <html lang="en">
-  
-  <head> 
-  <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    /> -->
-     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="navbar">
     <h1 id="title">
-    E-Waste Recycling Center Locator
-    </h1> 
+      E-Waste Recycling Center Locator
+    </h1>
     <h2 id="subtitle" class="sub">
       serving the beautiful city of San Francisco
     </h2>
-
-    
-  </head>
-  
-    <body>
-    <nav class="navbar navbar-light">
     <form class="search-bar d-flex" role="search">
-      <input
-        id="myinput"
-        class="form-control me-2"
-        type="search"
-        placeholder="Search By Device"
-        onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Search By Device'"
-        aria-label="Search"
-        autocomplete="off"
-        onkeyup="searchFunction()"
-      />
+      <input id="myinput" class="form-control me-2" type="text" placeholder="Search By Device"
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search By Device'" aria-label="Search"
+        autocomplete="off" onkeyup="searchFunction()" />
     </form>
-  </nav>
-      <!--<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div> -->
-      
-       <div class="container">
-      <div class="col-lg-4" id="RC-center"></div>
-    </div>
-       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity=
-"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous">
-    </script>
   
-    <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity=
-"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous">
+  <div class="container grid-container">
+    <div id="RC-center"></div>
+  </div>
+  <div id="detailed-view-container"></div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-       <script src="script.js" defer></script>
-  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+  <script src="script.js" defer></script>
+</body>
+
 </html>
+

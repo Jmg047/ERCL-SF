@@ -8,7 +8,7 @@ var SUMMARY_QUERY = "fields%5B%5D=Name&fields%5B%5D=Photo&fields%5B%5D=DVPhoto&f
 
 
 function getBSC() {
-  var eWRC_Element = document.getElementById("RC-center");
+  var eWRC_Element = document.querySelector(".grid-container");
 
   fetch(`${AT_url}?${AT_key}&${SUMMARY_QUERY}`)
     .then((response) => response.json())
@@ -23,47 +23,43 @@ function getBSC() {
         var name = data.records[i].fields["Name"];
         var photo = data.records[i].fields["Photo"];
         var address = data.records[i].fields["Address"];
-        var aD = data.records[i].fields["AcceptedDevices"]
-        
-      /*  var num = data.records[i].fields["Number"];
-        var link = data.records[i].fields["Website"];
-        var desc = data.records[i].fields["Desc"];
-        var aD = data.records[i].fields["AcceptedDevices"]
-        var methods = data.records[i].fields["methods"];
-        var appt = data.records[i].fields["Appointment?"];
-        */
+        var aD = data.records[i].fields["AcceptedDevices"];
+        var recordId = data.records[i].id; // Get the record ID for this button
 
         newHtml += `
-        
-          <div class="col-9">
-          <div class="card" >
-            
-              ${photo ? `<img class="card-img-top" src="${photo[0].url}">` : ``}
-            
-
-            <div class="card-body">
-              <p class="card-text card-key">${name}</p>
-              <p class="card-text card-key">Accepted Devices: <br>  ${aD}</p>
-              
-             <a class="btn btn-primary" 
-                href="index.html?id=${data.records[i].id}"
-                target="_blank">More Info</a>
+          <div id="list-view-container" class="cardImageText col-9 grid-item"> 
+            <div class="card " style="font-size: 30px;">
+              ${photo ? `<img class="card-img-top" src="${photo[0].url}">` : ''}
+              <div class="card-body">
+                <p class="card-text card-key">${name}</p>
+                <p class="card-text card-accepted-devices">Accepted Devices: <br>  ${aD}</p>
+                <!-- Add the event handler to the button and pass the record ID -->
+                <button class="btn btn-primary more-info-button" data-id="${recordId}">More Info</button>
+              </div>
             </div>
           </div>
-        </div>
-        
         `;
       }
-    
-    
 
-       eWRC_Element.innerHTML = newHtml;
+      eWRC_Element.innerHTML = newHtml;
+
+      // Add event listener to all "More Info" buttons after the elements are added to the DOM
+      const moreInfoButtons = document.querySelectorAll(".more-info-button");
+      moreInfoButtons.forEach(button => {
+        button.addEventListener("click", function() {
+          // Get the ID from the data-id attribute of the button
+          const recordId = button.getAttribute("data-id");
+          // Redirect the user to the detailed view using the record ID
+          window.location.href = `index.html?id=${recordId}`;
+        });
+      });
     });
 }
 
+
 // edit below
 function fetchSingleRC(rcId) {
-  var eWRC_Element = document.getElementById("RC-center");
+  var eWRC_Element = document.getElementById("detailed-view-container");
 
   fetch(`${AT_url}/${rcId}?${AT_key}`)
     .then(response => response.json())
@@ -80,21 +76,10 @@ function fetchSingleRC(rcId) {
       var methods = data.fields["methods"];
       var appt = data.fields["Appointment"];
       var gmurl = data.fields["googURL"];
- 
-      /*var colorsHtml = "";
-      if ("AcceptedDevices" in data.fields) {
-        colorsHtml += "<ul>";
-        var aD = data.fields["AcceptedDevices"].split(", ");
-        for (var i = 0; i < aD.length; i++) {
-          colorsHtml += `<li>${aD[i]}</li>`;
-        }
-        colorsHtml += "</ul>";
-      }
-      */
 
       var newHtml = `
-        <div class="col-9">
-          <div class="card" style="font-size: 30px;">
+      <div class="container-detailed-view">
+          <div class="card" style="font-size: 20px;">
             
             <h4 class="card-title" style="font-family: Monospace; text-align: center;" >${name}</h4> 
             
@@ -128,23 +113,29 @@ function fetchSingleRC(rcId) {
         <a href="${gmurl}" target="_blank">
           <img src="${photo1[0].url}" style="width: 100%" alt="picture of a ${name} recycling center">
         </div>
+
       `;
 
       eWRC_Element.innerHTML = newHtml;
     });
-} 
+}
 //edit above
 
 function searchFunction() {
-  var input, filter, cardimagetext, i, x;
-  input = document.getElementById("myinput");
-  filter = input.value.toUpperCase();
-  cardimagetext = document.getElementsByClassName("cardImageText");
+  var input, filter, cardimagetext, x;
+  input = document.getElementById('myinput');
+  filter = input.value.toLowerCase();
+  cardimagetext = document.getElementsByClassName('cardImageText');
 
   for (x = 0; x < cardimagetext.length; x++) {
-    i = cardimagetext[x].getElementsByClassName("card-key")[0];
-    if (i.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      cardimagetext[x].style.display = "";
+    var nameElement = cardimagetext[x].getElementsByClassName("card-key")[0];
+    var aDElement = cardimagetext[x].getElementsByClassName("card-accepted-devices")[0];
+
+    var name = nameElement.innerText.toLowerCase();
+    var aD = aDElement.innerText.toLowerCase();
+
+    if (name.includes(filter) || aD.includes(filter)) {
+      cardimagetext[x].style.display = "block";
     } else {
       cardimagetext[x].style.display = "none";
     }
