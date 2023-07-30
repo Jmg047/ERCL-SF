@@ -158,6 +158,9 @@ button:active {
   max-width: 800px;
   margin: 0 auto; 
 }
+.search-bar {
+  width: 120%;
+}
 
 /* Styles for the detailed view card image */
 .detailed-view-content {
@@ -218,23 +221,31 @@ button:active {
     flex-direction: column;
     align-items: center;
   }
+  .search-bar {
+    width: 100%;
+  }
   .card {
-    
-    padding: 10px; 
+    padding: 5px; 
   }
 
   .card-img-top {
     width: 100%; /* Make the image full width of the card */
     height: auto; /* Maintain aspect ratio */
   }
-
-  .card-body {
-    font-size: 16px;
-  }
-  .container-detailed-view {
+  #detailed-view-container{
     text-align: center;
     display: flex;
     justify-content: center;
+    font-size: 10px;
+    padding: 5px;
+  }
+  #detailed-view-container col{
+    display:  flex;
+    max-width: 40%;
+    justify-content: center;
+  }
+  #detailed-view-container img {
+    max-width: 70%;
   }
 }
 

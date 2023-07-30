@@ -77,7 +77,7 @@ function fetchSingleRC(rcId) {
       var gmurl = data.fields["googURL"];
 
       var newHtml = `
-      <div class="container-detailed-view">
+     
        <div class="detailed-view-content">
           <div class="card" style="font-size: 20px;">
             
@@ -112,7 +112,7 @@ function fetchSingleRC(rcId) {
             
           </div>
         </div>
-      </div>
+     
       `;
 
       eWRC_Element.innerHTML = newHtml;
