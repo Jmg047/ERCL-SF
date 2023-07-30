@@ -145,21 +145,26 @@ function showViewElements() {
   const idParams = window.location.search.split("?id=");
   const backButtonContainer = document.querySelector(".back-button-container");
   const searchContainer = document.querySelector(".search-bar");
+  const detailedViewContainer = document.querySelector(".container-detailed-view");
 
   if (idParams.length >= 2) {
     // has at least ["id?", "OUR ID"]
     backButtonContainer.style.display = "block"; // Show back button
     searchContainer.style.display = "none"; // Hide search bar
+    detailedViewContainer.style.display = "block"; // Show detailed view container
   } else {
     backButtonContainer.style.display = "none"; // Hide back button
     searchContainer.style.display = "block"; // Show search bar
+    detailedViewContainer.style.display = "none"; // Hide detailed view container
   }
 }
 
 // Add event listener to the back button
 document.getElementById("back-button").addEventListener("click", function () {
   window.location.href = "index.html"; 
+  toggleDetailView(false);
 });
+
 
 // Call the function to set the initial view state
 showViewElements();
@@ -168,6 +173,8 @@ var idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
   // has at least ["id?", "OUR ID"]
   fetchSingleRC(idParams[1]); // create detail view HTML w/ our id
+  toggleDetailView(true);
 } else {
   getBSC(); // no id given, fetch summaries
+  toggleDetailView(false);
 }

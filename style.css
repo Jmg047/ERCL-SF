@@ -157,6 +157,9 @@ button:active {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto; 
+  .container-detailed-view.hidden {
+    display: none; /* Hide the container when it has the "hidden" class */
+  }
 }
 .search-bar {
   width: 120%;
