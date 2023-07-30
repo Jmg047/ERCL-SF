@@ -146,19 +146,19 @@ button:active {
 }
 .container-detailed-view {
   display: flex; 
-  flex: 0 0 100%;
   flex-direction: center;
   justify-content: center;
   align-items: center;
-  min-height: 150vh;
+  min-height: 120vh;
   border-radius: 9px;
   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   padding: 20px;
   max-width: 800px;
   margin: 0 auto; 
+
   .container-detailed-view.hidden {
-    display: none; /* Hide the container when it has the "hidden" class */
+    display: none;
   }
 }
 .search-bar {
@@ -232,15 +232,15 @@ button:active {
   }
 
   .card-img-top {
-    width: 100%; /* Make the image full width of the card */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto; 
   }
   #detailed-view-container{
     text-align: center;
     display: flex;
     justify-content: center;
     font-size: 10px;
-    padding: 5px;
+    height: 30%;
   }
   #detailed-view-container col{
     display:  flex;
@@ -248,7 +248,8 @@ button:active {
     justify-content: center;
   }
   #detailed-view-container img {
-    max-width: 70%;
+    max-width: 60%;
+    height: auto;
   }
 }
 
