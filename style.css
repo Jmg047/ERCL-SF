@@ -156,6 +156,7 @@ button:active {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto; 
+  overflow: hidden;
 
   .container-detailed-view.hidden {
     display: none;
@@ -173,7 +174,7 @@ button:active {
   width: 100%;
 }
 .detailed-view-content .card img {
-  width: 100%;
+  width: 10%;
   height: auto;
   border-radius: 9px;
 }
